@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "efly-plus-plus",
+  "version": "${version}",
+  "name": "EFlyPlusPlus",
+  "description": "A Meteor Addon for EFly on Constantiam.",
+  "authors": [
+    "h1ggsk"
+  ],
+  "contact": {
+    "repo": "https://github.com/H1ggsK/efly-plus-plus"
+  },
+  "icon": "assets/eflyplusplus/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "meteor": [
+      "com.h1ggsk.eflyplusplus.EFlyPlusPlus"
+    ]
+  },
+  "custom": {
+    "meteor-client:color": "225,25,25"
+  },
+  "depends": {
+    "java": ">=21",
+    "minecraft": ["${mc_version}"],
+    "meteor-client": "*"
+  }
+}
