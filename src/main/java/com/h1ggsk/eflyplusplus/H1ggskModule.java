@@ -14,7 +14,7 @@ import net.minecraft.util.Formatting;
  */
 
 public class H1ggskModule extends Module {
-    private final String prefix = Formatting.WHITE + "[" + Formatting.DARK_PURPLE + "Addons" + Formatting.WHITE + "]";
+    private final String prefix = Formatting.WHITE + "[" + Formatting.DARK_PURPLE + "H1ggsK_ Addons" + Formatting.WHITE + "]";
     public final int priority;
 
     public H1ggskModule(Category category, String name, String description) {
