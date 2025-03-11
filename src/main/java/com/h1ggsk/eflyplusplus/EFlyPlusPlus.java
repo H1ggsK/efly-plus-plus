@@ -10,8 +10,7 @@ import org.slf4j.Logger;
 
 public class EFlyPlusPlus extends MeteorAddon {
     public static final Logger LOG = LogUtils.getLogger();
-    public static final Category CATEGORY = new Category("H1ggsK_ Addons");
-
+    
     @Override
     public void onInitialize() {
         LOG.info("Initializing EFlyPlusPlus Meteor Addon");
@@ -22,7 +21,6 @@ public class EFlyPlusPlus extends MeteorAddon {
 
     @Override
     public void onRegisterCategories() {
-        Modules.registerCategory(CATEGORY);
     }
 
     @Override
