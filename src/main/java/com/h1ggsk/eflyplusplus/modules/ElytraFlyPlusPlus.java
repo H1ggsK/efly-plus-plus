@@ -1,10 +1,10 @@
 package com.h1ggsk.eflyplusplus.modules;
 
-import com.h1ggsk.eflyplusplus.H1ggskModule;
-import com.h1ggsk.eflyplusplus.EFlyPlusPlus;
 import meteordevelopment.meteorclient.events.entity.player.PlayerMoveEvent;
 import meteordevelopment.meteorclient.mixininterface.IVec3d;
 import meteordevelopment.meteorclient.settings.*;
+import meteordevelopment.meteorclient.systems.modules.Categories;
+import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.orbit.EventHandler;
 import meteordevelopment.orbit.EventPriority;
 import net.minecraft.util.math.MathHelper;
@@ -15,9 +15,9 @@ import net.minecraft.util.math.Vec3d;
  * @author h1ggsk
  */
 
-public class ElytraFlyPlusPlus extends H1ggskModule {
+public class ElytraFlyPlusPlus extends Module {
     public ElytraFlyPlusPlus() {
-        super(EFlyPlusPlus.CATEGORY, "Elytra Fly++", "Better efly.");
+        super(Categories.Movement, "Elytra Fly++", "Better efly.");
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
@@ -116,7 +116,7 @@ public class ElytraFlyPlusPlus extends H1ggskModule {
 
     private final Setting<Double> constSpeed = sgSpeed.add(new DoubleSetting.Builder()
         .name("Const Speed")
-        .description("Maximum speed for constantiam mode.")
+        .description("Maximum speed for Constantiam mode.")
         .defaultValue(1)
         .min(0)
         .sliderRange(0, 5)
@@ -126,7 +126,7 @@ public class ElytraFlyPlusPlus extends H1ggskModule {
 
     private final Setting<Double> constAcceleration = sgSpeed.add(new DoubleSetting.Builder()
         .name("Const Acceleration")
-        .description("Maximum speed for constantiam mode.")
+        .description("Maximum speed for Constantiam mode.")
         .defaultValue(1)
         .min(0)
         .sliderRange(0, 5)
