@@ -8,6 +8,7 @@ import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.orbit.EventHandler;
 import meteordevelopment.orbit.EventPriority;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec2f;
 import net.minecraft.util.math.Vec3d;
 
 /**
@@ -172,12 +173,12 @@ public class ElytraFlyPlusPlus extends Module {
     }
 
     private Vec3d getMotion(Vec3d velocity) {
-        if (mc.player.input.movementForward == 0) {
+        if (mc.player.input.getMovementInput().y == 0) {
             if (constStop.get()) return new Vec3d(0, 0, 0);
             return null;
         }
 
-        boolean forward = mc.player.input.movementForward > 0;
+        boolean forward = mc.player.input.getMovementInput().y > 0;
 
         double yaw = Math.toRadians(mc.player.getYaw() + (forward ? 90 : -90));
 
@@ -228,8 +229,9 @@ public class ElytraFlyPlusPlus extends Module {
     private void updateWaspMovement() {
         float yaw = mc.player.getYaw();
 
-        float f = mc.player.input.movementForward;
-        float s = mc.player.input.movementSideways;
+        Vec2f movementInput = mc.player.input.getMovementInput();
+        float f = movementInput.y;
+        float s = movementInput.x;
 
         if (f > 0) {
             moving = true;
@@ -287,8 +289,9 @@ public class ElytraFlyPlusPlus extends Module {
     private void updateControlMovement() {
         float yaw = mc.player.getYaw();
 
-        float f = mc.player.input.movementForward;
-        float s = mc.player.input.movementSideways;
+        Vec2f movementInput = mc.player.input.getMovementInput();
+        float f = movementInput.y;
+        float s = movementInput.x;
 
         if (f > 0) {
             moving = true;
